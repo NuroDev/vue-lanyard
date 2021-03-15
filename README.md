@@ -9,12 +9,14 @@ Vue hook for [lanyard](https://github.com/Phineas/lanyard/) for tracking your Di
 
 ### 🦄 Usage
 
-```typescript
+```vue
+<script setup lang="ts">
 import { useLanyard } from 'vue-lanyard';
 					
 const DISCORD_ID = 'XXXXXXXXXXXXXXXXXX';
 
-const { data } = await useLanyard(DISCORD_ID);
+const { data } = useLanyard(DISCORD_ID);
+</script>
 ```
 
 ### ❗ Types
