@@ -27,6 +27,10 @@ All types used for this library are also readily available & can be used as foll
 import type { Data, Activity, ... } from 'vue-lanyard';
 ```
 
+### ⚠️ Requirements
+
+Currently this project is built around using [`swrv`](https://docs-swrv.netlify.app/) which relies on [`@vue/composition-api`](https://github.com/vuejs/composition-api). As such, Vue 2.x support is currently not functioning, but it is currently in the works.
+
 ### ❤️ Acknowledgements
 
  - [Phineas Walton](https://github.com/Phineas/) – Author of lanyard
