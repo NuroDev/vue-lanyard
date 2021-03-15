@@ -49,6 +49,6 @@
 		"typescript": "^4.2.3"
 	},
 	"dependencies": {
-		"swrv": "^0.9.3"
+		"swrv": "^1.0.0-beta.8"
 	}
 }
