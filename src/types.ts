@@ -2,24 +2,33 @@ export type LanyardResponse = {
 	success: boolean;
 } & LanyardResponseErrorOrData;
 
-type LanyardResponseErrorOrData = { data: Data } | { error: { message: string; code: string } };
+type LanyardResponseErrorOrData =
+	| {
+		data: Data;
+	}
+	| {
+		error: {
+			message: string;
+			code: string;
+		};
+	};
 
 export interface Data {
-	spotify: Spotify | null;
-	listening_to_spotify: boolean;
-	discord_user: DiscordUser;
-	discord_status: string;
-	activities: Activity[];
-	active_on_discord_mobile: boolean;
 	active_on_discord_desktop: boolean;
+	active_on_discord_mobile: boolean;
+	activities: Activity[];
+	discord_status: string;
+	discord_user: DiscordUser;
+	listening_to_spotify: boolean;
+	spotify: Spotify | null;
 }
 
 export interface Spotify {
-	timestamps: Timestamps;
-	song: string;
-	artist: string;
 	album_art_url: string;
 	album: string;
+	artist: string;
+	song: string;
+	timestamps: Timestamps;
 }
 
 export interface Timestamps {
@@ -28,34 +37,34 @@ export interface Timestamps {
 }
 
 export interface DiscordUser {
-	username: string;
-	public_flags: number;
-	id: number;
-	discriminator: string;
 	avatar: string;
+	discriminator: string;
+	id: number;
+	public_flags: number;
+	username: string;
 }
 
 export interface Activity {
-	type: number;
-	state: string;
-	name: string;
-	id: string;
-	emoji?: Emoji;
-	created_at: number;
-	timestamps?: Timestamps;
-	sync_id?: string;
-	session_id?: string;
-	party?: Party;
-	flags?: number;
-	details?: string;
-	assets?: Assets;
 	application_id?: number;
+	assets?: Assets;
+	created_at: number;
+	details?: string;
+	emoji?: Emoji;
+	flags?: number;
+	id: string;
+	name: string;
+	party?: Party;
+	session_id?: string;
+	state: string;
+	sync_id?: string;
+	timestamps?: Timestamps;
+	type: number;
 }
 
 export interface Emoji {
-	name: string;
-	id: number;
 	animated: boolean;
+	id: number;
+	name: string;
 }
 
 export interface Party {
@@ -63,8 +72,8 @@ export interface Party {
 }
 
 export interface Assets {
-	small_text: string;
-	small_image: string;
-	large_text: string;
 	large_image: string;
+	large_text: string;
+	small_image: string;
+	small_text: string;
 }
