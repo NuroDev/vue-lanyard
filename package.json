@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "vue-lanyard",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Vue hook for Lanyard for tracking your Discord presence",
 	"license": "MIT",
 	"repository": {
