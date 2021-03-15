@@ -1,6 +1,8 @@
 import useSWRV from 'swrv';
 
-import { Data, LanyardResponse } from './types';
+import type { IResponse } from 'swrv/dist/types';
+
+import type { Data, LanyardResponse } from './types';
 
 export * from './types';
 
@@ -14,6 +16,6 @@ const fetcher = async (id: string): Promise<Data> => {
 	return body.data;
 };
 
-export const useLanyard = async (id: string) => useSWRV<Data>(`lanyard:${id}`, fetcher);
+export const useLanyard = (id: string): IResponse<Data, any> => useSWRV<Data>(id, fetcher);
 
 export default useLanyard;
